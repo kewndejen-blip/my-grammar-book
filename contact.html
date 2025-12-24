@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>እኛን ለማግኘት - Contact Us</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Noto Serif Ethiopic', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        h1 { color: var(--primary-color); margin-bottom: 10px; }
+        p { color: #666; margin-bottom: 30px; font-size: 1.1rem; }
+
+        .contact-item {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            border: 1px solid #eee;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-color: var(--accent-color);
+        }
+
+        .contact-item i {
+            font-size: 24px;
+            color: var(--accent-color);
+            margin-right: 20px;
+            width: 40px;
+        }
+
+        .contact-info h3 { margin: 0; font-size: 1rem; color: var(--primary-color); }
+        .contact-info span { font-size: 0.95rem; color: #555; }
+
+        .contact-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .back-btn:hover { background-color: #34495e; }
+
+        .footer { margin-top: 30px; font-size: 0.8rem; color: #999; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>እኛን ለማግኘት</h1>
+        <p>ስለ አፕሊኬሽኑ አስተያየት፣ ጥያቄ ወይም እርማት ካለዎት በደስታ እንቀበላለን።</p>
+
+        <!-- ኢሜይል -->
+        <div class="contact-item">
+            <a href="mailto:kewndejen@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-info">
+                    <h3>ኢሜይል (Email)</h3>
+                    <span>kewndejen@gmail.com</span> <!-- deaconkewndejen@gmail.com -->
+                </div>
+            </a>
+        </div>
+
+        <!-- ቴሌግራም -->
+        <div class="contact-item">
+            <a href="https://t.me/kewndejen" target="_blank" class="contact-link"> <!-- https://t.me/Dekemezmurhenoke -->
+                <i class="fab fa-telegram"></i>
+                <div class="contact-info">
+                    <h3>ቴሌግራም (Telegram)</h3>
+                    <span>@KewnDejen</span>
+                </div>
+            </a>
+        </div>
+
+        <!-- ስልክ (ከተፈለገ ብቻ አስገባ፣ ካልሆነ ይህንን div አጥፋው) -->
+        <div class="contact-item">
+            <div class="contact-link">
+                <i class="fas fa-phone-alt"></i>
+                <div class="contact-info">
+                    <h3>ስልክ (Phone)</h3>
+                    <span>+251 980 52 03 60</span> <!-- ስልክህን እዚህ አስገባ -->
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">⬅️ ወደ ዋናው ገጽ ተመለስ</a>
+
+        <div class="footer">
+            &copy; 2024 ዲያቆን ከውን ደጀን | መብቱ በሕግ የተጠበቀ ነው።
+        </div>
+    </div>
+
+</body>
+</html>
