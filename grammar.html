@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የግዕዝ/አማርኛ አገባብ - ዲያቆን ከውን ደጀን</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: 'Nyala', 'Abyssinica SIL', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            height: 100vh;
+            overflow: hidden; /* Prevent double scrollbars */
+        }
+        
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #1a252f;
+        }
+        .sidebar-header {
+            padding: 20px;
+            text-align: center;
+            background-color: #1a252f;
+        }
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #ecf0f1;
+        }
+        .sidebar-header p {
+            font-size: 0.8rem;
+            color: #bdc3c7;
+            margin-top: 5px;
+        }
+        .menu-list {
+            flex: 1;
+            overflow-y: auto;
+        }
+        .menu-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-bottom: 1px solid #34495e;
+            font-size: 0.95rem;
+        }
+        .menu-item:hover {
+            background-color: #1abc9c;
+        }
+        .menu-item.active {
+            background-color: #16a085;
+            font-weight: bold;
+            border-left: 5px solid #f1c40f;
+        }
+        
+        /* Author Footer in Sidebar */
+        .author-footer {
+            padding: 15px;
+            background-color: #1a252f;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #95a5a6;
+            border-top: 1px solid #34495e;
+        }
+        .author-name {
+            color: #fff;
+            font-weight: bold;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Main Content Styling */
+        .content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        h1 { 
+            color: #2c3e50; 
+            border-bottom: 3px solid #1abc9c; 
+            padding-bottom: 10px; 
+            margin-top: 0;
+        }
+        .intro-author {
+            background-color: #e8f8f5;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #1abc9c;
+            color: #16a085;
+            font-weight: bold;
+            text-align: center;
+        }
+        p { 
+            line-height: 1.8; 
+            font-size: 1.1rem; 
+            color: #444; 
+        }
+        
+        /* Example Box Styling */
+        .example-box {
+            background-color: #f8f9fa;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 0 5px 5px 0;
+        }
+        .example-title { 
+            font-weight: bold; 
+            color: #2980b9; 
+            margin-bottom: 10px; 
+            font-size: 1.1rem;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 10px; 
+            background: white;
+        }
+        th, td { 
+            border: 1px solid #e0e0e0; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background-color: #3498db; 
+            color: white; 
+        }
+        tr:nth-child(even) {
+            background-color: #f2f6f8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body { flex-direction: column; height: auto; overflow: auto; }
+            .sidebar { width: 100%; height: auto; }
+            .menu-list { display: none; } /* Hide menu initially on mobile - simple version */
+            .menu-list.show { display: block; }
+            .sidebar-header { cursor: pointer; } /* Make header clickable to show menu */
+            .sidebar-header::after { content: ' (ምናሌን ለመክፈት ይጫኑ)'; font-size: 0.7rem; display: block;}
+            .content { padding: 10px; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- የግራ ምናሌ -->
+    <div class="sidebar">
+        <div class="sidebar-header" onclick="toggleMenu()">
+            <h2>የዘር አወጣጥ</h2>
+            <p>የግዕዝ/አማርኛ አገባብ</p>
+        </div>
+        
+        <div class="menu-list" id="menuList">
+            <!-- ዝርዝሮች በ JavaScript ይሞላሉ -->
+        </div>
+
+        <div class="author-footer">
+            አዘጋጅ
+            <span class="author-name">ዲያቆን ከውን ደጀን</span>
+        </div>
+    </div>
+
+    <!-- ዋና ይዘት -->
+    <div class="content">
+        <div class="card" id="mainContent">
+            <h1>እንኳን ደህና መጡ</h1>
+            
+            <div class="intro-author">
+                በዲያቆን ከውን ደጀን የተዘጋጀ
+            </div>
+
+            <p>ይህ አፕሊኬሽን/ዌብሳይት የተዘጋጀው የግዕዝ እና የአማርኛ ቋንቋ አገባብን (Syntax/Grammar) በተለይም የዘር አወጣጥን በቀላሉ ለማጥናት እንዲረዳ ታስቦ ነው።</p>
+            <p>ከግራ በኩል (በስልክ ከሆነ ከላይ) ያሉትን ርዕሶች በመምረጥ መማር መጀመር ይችላሉ።</p>
+            <br>
+            <hr>
+            <p style="text-align: center; font-size: 0.9rem; color: #7f8c8d;">
+                &copy; 2024 - በዲያቆን ከውን ደጀን የተዘጋጀ
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // ዳታ (Data)
+        const grammarData = [
+            {
+                id: 1,
+                title: "ዘመድ ዘር",
+                description: "ከግሱ ሆህያት ምንም ሳይጨምር መድረሻው ሳድስ ኾኖ የሚወጣ ዘር ዘመድ ዘር ይባላል። ካሉት ሆኅያት ሊቀንስም ላይቀንስም ይችላል። <br><br>ለአብነት ያህል 'ደምፀ = ተሰማ' ከሚለው 'ድምፅ' የሚል ዘመድ ዘር ይወጣል። የመጨረሻ ፊደሉ ‹ፅ› ሳድስ መሆኑን ልብ ይበሉ።",
+                examples: [
+                    { verb: "ነሰረ (በረረ)", derived: "ንስር" },
+                    { verb: "ፈለከ (ፈጠረ)", derived: "ፈለክ" },
+                    { verb: "ለበወ (ልብ አደረገ)", derived: "ልብ" },
+                    { verb: "አንፀብረቀ (አብረቀረቀ)", derived: "ነፀብራቅ" },
+                    { verb: "ሔሰ (ነቀፈ)", derived: "ሒስ" },
+                    { verb: "መጽወተ (ሰጠ)", derived: "ምጽዋት" },
+                    { verb: "ጾመ (ጾመ)", derived: "ጾም" },
+                    { verb: "ሐለበ (አለበ)", derived: "ሐሊብ/ወተት" }
+                ]
+            },
+            {
+                id: 2,
+                title: "ጥሬ ዘር",
+                description: "ጥሬ ዘርም ልክ እንደ ዘመድ ዘር ኹሉ ከግሱ ሆሄያት ላይ ምንም ምን ሳይጨምር መድረሻውን ‹ራብዕ፣ ኃምስ፣ እና ሳብዕ› አድርጎ የሚወጣ ነው።",
+                examples: [
+                    { verb: "ተቀጸለ (ተቀዳጀ)", derived: "ቀጸላ" },
+                    { verb: "አደመ (አማረ)", derived: "ዕድሜ" },
+                    { verb: "ዘመረ (አመሰገነ)", derived: "ዝማሬ" },
+                    { verb: "ቀነየ (ገዛ)", derived: "ቅኔ" },
+                    { verb: "ደመነ (ጋረደ)", derived: "ደመና" },
+                    { verb: "ማሰነ (ጠፋ)", derived: "ሙስና" },
+                    { verb: "ተንሥአ (ተነሣ)", derived: "ትንሣኤ" },
+                    { verb: "ከብረ (ከበረ)", derived: "ከበሮ" }
+                ]
+            },
+            {
+                id: 3,
+                title: "ሳቢ ዘር",
+                description: "ከግሡ መድረሻ ‹ት› ፊደልን የሚጨምር ሆኖ የግሡን መድረሻ ግእዝ አድርጎ ሌላውን ‹ሳድስ› አድርጎ የሚወጣ ዘር ነው።<br><br><b>ልዩ ማስታወሻ፡</b> በሳቢ ዘር የቆመ ቤቶች በተለየ መነሻቸውን ካዕብ ያደርጉና ‹ት› ፊደልን ይጨምራሉ። (ምሳሌ፡ ቆመ -> ቁመት)።",
+                examples: [
+                    { verb: "ፈርሀ (ፈራ)", derived: "ፍርሀት" },
+                    { verb: "ሰቀለ (ሰቀለ)", derived: "ስቅለት" },
+                    { verb: "ጸልመ (ጨለመ)", derived: "ጽልመት" },
+                    { verb: "ፈለሰ (ተሰደደ)", derived: "ፍልሰት" },
+                    { verb: "ፈጠረ (ፈጠረ)", derived: "ፍጥረት" },
+                    { verb: "አምነ (አመነ)", derived: "እምነት" },
+                    { verb: "ሰገደ (ሰገደ)", derived: "ስግደት" },
+                    { verb: "ወለደ (ወለደ)", derived: "ልደት (ልዩ)" }
+                ]
+            },
+            {
+                id: 4,
+                title: "ባዕድ ዘር",
+                description: "ከግሱ መነሻ ባዕድ ቀለማትን ‹መ፣ ተ፣ አ› ን ከግእዝ እስከ ሳብዓቸው እየጨመረ የሚወጣ ሲሆን መድረሻው ግን ሳድስ ነው።",
+                examples: [
+                    { verb: "ቀበረ (ቀበረ)", derived: "መቃብር" },
+                    { verb: "አመረ (አመለከተ)", derived: "ተአምር" },
+                    { verb: "ዘመረ (አመሰገነ)", derived: "መዝሙር" },
+                    { verb: "አዕረፈ (አረፈ)", derived: "ምዕራፍ" },
+                    { verb: "ከለለ (ጋረደ)", derived: "አክሊል" },
+                    { verb: "ቆመ (ቆመ)", derived: "ተቅዋም" },
+                    { verb: "ገብረ (ሠራ)", derived: "ተግባር" },
+                    { verb: "መሰለ (መሰለ)", derived: "አምሳል" }
+                ]
+            },
+            {
+                id: 5,
+                title: "ምዕላድ",
+                description: "ምዕላድ ደግሞ ከግሱ መድረሻ ላይ ባዕድ ፊደል የሚጨምር እና መድረሻውን ሳድስ አድርጎ የሚወጣ ነው።",
+                examples: [
+                    { verb: "ተየውሃ (የዋህ ኾነ)", derived: "የውሃት" },
+                    { verb: "በርሀ (በራ)", derived: "ብርሃን" },
+                    { verb: "ሠርዐ (ሠራ)", derived: "ሥርዓት" },
+                    { verb: "ኀበሰ (ጋገረ)", derived: "ኅብስት" },
+                    { verb: "ረድአ (ረዳ)", derived: "ረድኤት" },
+                    { verb: "ተሠልጠ (ሰለጠነ)", derived: "ሥልጣን" },
+                    { verb: "ተነበየ (ተናገረ)", derived: "ትንቢት" },
+                    { verb: "መዐደ (መከረ)", derived: "ምዕዳን" }
+                ]
+            },
+            {
+                id: 6,
+                title: "ባዕድ ከምዕላድ",
+                description: "በግሱ መነሻ እና መድረሻ ላይ ባዕድ ፊደል ጨምሮ የሚወጣ ዘር ባዕድ ከምዕላድ ይባላል። ለምሳሌ ‹ቀሠፈ=ገረፈ› ከሚለው የግእዝ ቃል ‹መቅሠፍት› የሚል ባዕድ ከምዕላድ ይወጣል።",
+                examples: [
+                    { verb: "መሀረ (አስተማረ)", derived: "ትምህርት" },
+                    { verb: "አንጦልዐ (ጋረደ)", derived: "መንጦላዕት" },
+                    { verb: "ዐደወ (ተሻገረ)", derived: "ማዕዶት" },
+                    { verb: "ሦዐ (ሠዋ)", derived: "መሥዋዕት" },
+                    { verb: "ሰፈረ (ለካ)", derived: "መስፈርት" }
+                ]
+            },
+            {
+                id: 7,
+                title: "ጥሬ ምዕላድ",
+                description: "ከግሱ መድረሻ ላይ ባዕድ ፊደል ጨምሮ የተጨመረው ባዕድ ፊደል ‹ራብዕ፣ ኃምስ ወይም ሳብዕ› ከኾነ ጥሬ ምዕላድ ይባላል።",
+                examples: [
+                    { verb: "ኀለየ (አሰበ)", derived: "ኅሊና" },
+                    { verb: "ነጽሐ (ንጹሕ ሆነ)", derived: "ንጽሕና" },
+                    { verb: "ለበወ (አስተዋለ)", derived: "ልቡና" },
+                    { verb: "ተሰብአ (ሰው ሆነ)", derived: "ሰብእና" },
+                    { verb: "ሀለወ (ኖረ)", derived: "ህልውና" }
+                ]
+            },
+            {
+                id: 8,
+                title: "ባዕድ ጥሬ ዘር",
+                description: "በግሱ መነሻ ላይ ባዕድ ፊደል ይጨምርና መድረሻ ፊደሉ ‹ራብዕ፣ ኃምስ ወይም ሳብዕ› ከኾኑ ባዕድ ጥሬ ዘር ይባላል።",
+                examples: [
+                    { verb: "ሰንቀወ (መታ)", derived: "መሰንቆ" },
+                    { verb: "ሰፈነ (ገዛ)", derived: "ምስፍና" }
+                ]
+            },
+            {
+                id: 9,
+                title: "ጉልት",
+                description: "የግሡን መድረሻ ካዕብ ካደረገ ጉልት ይባላል። ለወንድ በካዕብ ፊደል፣ ለሴት በሣልስ ወይም በራዕብ ይደርሳል።",
+                examples: [
+                    { verb: "አከለ (በቃ)", derived: "ኵሉ" },
+                    { verb: "አሐደ (አንድ አደረገ)", derived: "አሐዱ" }
+                ]
+            },
+            {
+                id: 10,
+                title: "ቦዝ አንቀጽ",
+                description: "ቸልታ የሚሆን አንቀጽ ነው። ይኸውም በዐሥሩ መራሕያን ይዘረዘራል።",
+                examples: [
+                    { verb: "ውእቱ", derived: "ቀዲሶ (አመስግኖ)" },
+                    { verb: "ውእቶሙ", derived: "ቀዲሶሙ (አመስግነው)" },
+                    { verb: "ይእቲ", derived: "ቀዲሳ (አመስግና)" },
+                    { verb: "ውእቶን", derived: "ቀዲሶን (አመስግነው)" },
+                    { verb: "አንተ", derived: "ቀዲሰከ (አመስግነህ)" },
+                    { verb: "አንትሙ", derived: "ቀዲሰክሙ (አመስግናችሁ)" },
+                    { verb: "አንቲ", derived: "ቀዲሰኪ (አመስግነሽ)" },
+                    { verb: "አንትን", derived: "ቀዲሰክን (አመስግናችሁ)" },
+                    { verb: "አነ", derived: "ቀዲስየ (አመስግኜ)" },
+                    { verb: "ንሕነ", derived: "ቀዲሰነ (አመስግነን)" }
+                ]
+            }
+        ];
+
+        // ዌብሳይቱ ሲከፈት የሚሰራ ተግባር
+        const menuList = document.getElementById('menuList');
+        const mainContent = document.getElementById('mainContent');
+
+        grammarData.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.className = 'menu-item';
+            div.innerText = item.title;
+            div.onclick = () => {
+                loadContent(index);
+                // On mobile, hide menu after click
+                if(window.innerWidth <= 768) {
+                    menuList.classList.remove('show');
+                }
+            };
+            menuList.appendChild(div);
+        });
+
+        function loadContent(index) {
+            const data = grammarData[index];
+            
+            // የሠንጠረዥ አሰራር
+            let tableRows = '';
+            data.examples.forEach(ex => {
+                tableRows += `<tr><td>${ex.verb}</td><td>${ex.derived}</td></tr>`;
+            });
+
+            const html = `
+                <h1>${data.title}</h1>
+                <div class="intro-author" style="font-size:0.8rem; padding:5px;">በዲያቆን ከውን ደጀን የተዘጋጀ</div>
+                <p>${data.description}</p>
+                <div class="example-box">
+                    <div class="example-title">ምሳሌዎች</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ግስ (ከነ ትርጉሙ)</th>
+                                <th>የወጣው ዘር</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${tableRows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            mainContent.innerHTML = html;
+
+            // Active class ማስተካከል
+            const items = document.querySelectorAll('.menu-item');
+            items.forEach(i => i.classList.remove('active'));
+            items[index].classList.add('active');
+        }
+
+        function toggleMenu() {
+            if(window.innerWidth <= 768) {
+                menuList.classList.toggle('show');
+            }
+        }
+    </script>
+</body>
+</html>
