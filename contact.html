@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>እኛን ለማግኘት - Contact Us</title>
+    <meta name="description" content="ያግኙን — ስለ አፕሊኬሽኑ አስተያየት፣ ጥያቄ ወይም እርማት ይደርሱልን።">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
     <!-- Icons -->
@@ -92,18 +93,31 @@
         .back-btn:hover { background-color: #34495e; }
 
         .footer { margin-top: 30px; font-size: 0.8rem; color: #999; }
+
+        /* Visually hidden (for accessible labels if needed) */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <main class="container" role="main">
         <h1>እኛን ለማግኘት</h1>
         <p>ስለ አፕሊኬሽኑ አስተያየት፣ ጥያቄ ወይም እርማት ካለዎት በደስታ እንቀበላለን።</p>
 
         <!-- ኢሜይል -->
         <div class="contact-item">
-            <a href="mailto:kewndejen@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i>
+            <a href="mailto:kewndejen@gmail.com" class="contact-link" aria-label="Email to kewndejen">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
                 <div class="contact-info">
                     <h3>ኢሜይል (Email)</h3>
                     <span>kewndejen@gmail.com</span> <!-- deaconkewndejen@gmail.com -->
@@ -113,8 +127,8 @@
 
         <!-- ቴሌግራም -->
         <div class="contact-item">
-            <a href="https://t.me/kewndejen" target="_blank" class="contact-link"> <!-- https://t.me/Dekemezmurhenoke -->
-                <i class="fab fa-telegram"></i>
+            <a href="https://t.me/kewndejen" target="_blank" rel="noopener noreferrer" class="contact-link" aria-label="Open Telegram (opens in new tab)">
+                <i class="fab fa-telegram" aria-hidden="true"></i>
                 <div class="contact-info">
                     <h3>ቴሌግራም (Telegram)</h3>
                     <span>@KewnDejen</span>
@@ -122,23 +136,23 @@
             </a>
         </div>
 
-        <!-- ስልክ (ከተፈለገ ብቻ አስገባ፣ ካልሆነ ይህንን div አጥፋው) -->
+        <!-- ስልክ (clickable tel: link so mobile users can tap to call) -->
         <div class="contact-item">
-            <div class="contact-link">
-                <i class="fas fa-phone-alt"></i>
+            <a href="tel:+251980520360" class="contact-link" aria-label="Call +251 980 52 03 60">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                 <div class="contact-info">
                     <h3>ስልክ (Phone)</h3>
                     <span>+251 980 52 03 60</span> <!-- ስልክህን እዚህ አስገባ -->
                 </div>
-            </div>
+            </a>
         </div>
 
-        <a href="index.html" class="back-btn">⬅️ ወደ ዋናው ገጽ ተመለስ</a>
+        <a href="index.html" class="back-btn" aria-label="Back to homepage">⬅️ ወደ ዋናው ገጽ ተመለስ</a>
 
         <div class="footer">
-            &copy; 2024 ዲያቆን ከውን ደጀን | መብቱ በሕግ የተጠበቀ ነው።
+            &copy; 2025 ዲያቆን ከውን ደጀን | መብቱ በሕግ የተጠበቀ ነው።
         </div>
-    </div>
+    </main>
 
 </body>
 </html>
